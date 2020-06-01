@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: rama982/dokar:latest 
+    steps:
+      - checkout
+      - run: sh -c "$(curl -sSL https://github.com/starlight5234/scripts/raw/master/build_on_docker.sh)"
