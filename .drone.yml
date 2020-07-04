@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: Unitrix-Pipeline
+
+steps:
+- name: Gink-Low
+  image: starlight2834/ci_docker:latest
+  environment:
+    BOT_API_KEY:
+      from_secret: BOT_API
+    ID:
+      from_secret: ID
+  commands:
+  - "curl https://raw.githubusercontent.com/Unitrix-Kernel/build_scripts/ginkgo/build.sh | bash"
